@@ -4,18 +4,9 @@ Holla is a group chat app. The UI is built in a RIA fashion - i.e. is totally as
 
 A WebKit based browser (Safari/Chrome) is required due to specific CSS optimizations. 
 
-#Live Demo
+# randx fork
 
-__[Checkout a live demo here](http://maccman-holla.heroku.com/)__
-
-Good examples for:
-
-* CSS3 theming (inspired by http://jquerymobile.com)
-* [Spine](http://github.com/maccman/spine) JS frontend
-* Less
-* Sprockets
-* Juggernaut 2
-* Async uploads with progress
+I've made some changes to make it more usable. My patch store all coversation in db - not in memory.
 
 ![Screenshot](https://lh4.googleusercontent.com/_IH1OempnqUc/TZF1gMnidmI/AAAAAAAABKE/b9rp9RdtA3o/s800/Screen%20shot%202011-03-29%20at%2018.58.12.png)
 
@@ -24,12 +15,13 @@ Good examples for:
 * Ruby 1.9.2
 * Bundler
 * Redis
+* Nodejs
 
 # Installation
 
+* setup nodejs, juggernaut
 * bundle install
 * rake db:migrate
-* rails server thin
-* start the Juggernaut server - [http://github.com/maccman/juggernaut](http://github.com/maccman/juggernaut)
+* bundle exec foreman start -p 3000
 
 Now go to [http://localhost:3000](http://localhost:3000)
