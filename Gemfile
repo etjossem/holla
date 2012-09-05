@@ -7,7 +7,7 @@ gem "rack-less"
 gem "rack-sprockets"
 gem "yui-compressor"
 gem "supermodel"
-
+gem "foreman"
 gem "sqlite3"
 gem "juggernaut"
 gem "thin"
@@ -16,5 +16,5 @@ gem "omniauth"
 gem "carrierwave"
 
 group :development do
-  gem "ruby-debug19", :require => "ruby-debug"
+  gem "pry"
 end
