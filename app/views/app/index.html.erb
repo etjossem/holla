@@ -9,7 +9,14 @@
 </head>
 <body>
   <header id="title">
-    <h1>Holla</h1>    
+    <h1>randx:Holla</h1>    
+    <% if current_user %>
+      <span class="user-block">
+        <%= image_tag cookies[:image] %>
+        <span class="user-name"><%= current_user%></h4>
+        <%= link_to "Logout", logout_path %>
+      </span>
+    <% end %>
   </header>
   
   <div id="wrapper">

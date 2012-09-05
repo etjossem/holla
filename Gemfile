@@ -1,12 +1,8 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.5"
-
-gem "less", :git => "git://github.com/maccman/less.git"
-gem "rack-less"
+gem "rails", "3.0.17"
 gem "rack-sprockets"
 gem "yui-compressor"
-gem "supermodel"
 gem "foreman"
 gem "sqlite3"
 gem "juggernaut"
