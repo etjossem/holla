@@ -4,19 +4,21 @@
   <title>Holla</title>
   <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tag %>
-  <%= meta_tag "handle", current_user %>
+  <%= meta_tag "handle", current_user.try(:nickname) || "" %>
   <%= javascript_include_tag :juggernaut, "application" %>
 </head>
 <body>
   <header id="title">
-    <h1>randx:Holla</h1>    
-    <% if current_user %>
+    <h1><%= Settings.company_name %>:chat</h1>    
       <span class="user-block">
-        <%= image_tag cookies[:image] %>
-        <span class="user-name"><%= current_user%></h4>
-        <%= link_to "Logout", logout_path %>
+        <% if current_user %>
+          <%= image_tag current_user.image %>
+          <span class="user-name"><%= current_user.nickname %></h4>
+          <%= link_to "Logout", logout_path, :class => "logout-link" %>
+        <% else %>
+          <%= link_to "Login via Twitter", login_path, :class => "login-link" %>
+        <% end %>
       </span>
-    <% end %>
   </header>
   
   <div id="wrapper">
@@ -24,14 +26,15 @@
       <h3>Channels</h3>
       <ul id="channels">
       </ul>
-    
-      <h3>Options</h3>
-      <ul id="options">
-        <li data-name="settings">Settings</li>
-      </ul>
-      
-      <h3>Search</h3>
-      <input type="search" results="0" incremental="true" placeholder="Search">
+
+      <% if current_user %>
+        <h3>Options</h3>
+        <ul id="options">
+          <li data-name="settings">Settings</li>
+        </ul>
+        <h3>Search</h3>
+        <input type="search" results="0" incremental="true" placeholder="Search">
+      <% end %>
     </div>
     
     <div class="vdivide"></div>
@@ -41,10 +44,12 @@
         <ul class="items">
         </ul>
         
-        <div class="new">
-          <textarea></textarea>
-          <button>Send</button>
-        </div>
+        <% if current_user %>
+          <div class="new">
+            <textarea></textarea>
+            <button>Send</button>
+          </div>
+        <% end %>
       </div>
       
       <div id="searches">

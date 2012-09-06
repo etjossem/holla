@@ -344,9 +344,9 @@ button.pill {
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f9fa), to(#cfd1d3));
   background: -moz-linear-gradient(top, #f9f9fa, #cfd1d3);
   background: linear-gradient(top, #f9f9fa, #cfd1d3);
-  -moz-border-radius: 18px;
-  -webkit-border-radius: 18px;
-  border-radius: 18px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 button.pill:active {
   background: #d4d6d7;
@@ -388,9 +388,9 @@ textarea, input[type="text"], input[type="password"] {
   font-size: 17px;
   outline: none;
   padding: 10px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5x;
   background: #e6e6e7;
   background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e7), to(#fafafa));
   background: -moz-linear-gradient(top, #e6e6e7, #fafafa);
@@ -938,12 +938,19 @@ body {
 
 .user-block  a{
   color:#2ab;
-  border-left:1px solid #888;
-  padding-left:15px;
-  margin-left:15px;
 }
 
 .user-block .user-name {
   color: white;
   font-size: 14px;
+}
+
+header .login-link {
+  font-weight:bold;
+  color:white;
+}
+header .logout-link {
+  border-left:1px solid #888;
+  padding-left:15px;
+  margin-left:15px;
 }

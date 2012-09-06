@@ -1,9 +1,7 @@
 class AuthorizeController < ApplicationController
   def create
-    info = request.env["omniauth.auth"]["user_info"]
-    cookies.permanent.signed[:handle] = info['nickname']
-    cookies[:name]   = info['name']
-    cookies[:image]  = info['image']
+    oauth = request.env["omniauth.auth"]
+    cookies.permanent.signed[:current_user] = User.new(oauth).dump
 
     redirect_to "/"
   end
@@ -13,6 +11,7 @@ class AuthorizeController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:handle)
+    cookies.signed[:current_user] = nil
+    redirect_to "/"
   end
 end

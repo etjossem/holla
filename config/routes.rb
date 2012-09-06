@@ -6,10 +6,12 @@ Holla2::Application.routes.draw do
 
   match "/assets/*:id" => "assets#show"
 
+  get "login" => redirect("/auth/twitter")
+  get "logout" => "authorize#destroy"
+
+  match "/authorize" => redirect("/auth/twitter")
   match "/auth/twitter/callback" => "authorize#create"
   match "/auth/failure" => "authorize#failure"
-  match "/logout" => "authorize#destroy", :as => :logout
-  match "/authorize" => redirect("/auth/twitter")
 
   root :to => "app#index"
 end

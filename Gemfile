@@ -10,6 +10,7 @@ gem "thin"
 
 gem "omniauth"
 gem "carrierwave"
+gem "settingslogic"
 
 group :development do
   gem "pry"
