@@ -19,9 +19,24 @@ I've made some changes to make it more usable. My patch store all coversation in
 
 # Installation
 
-* setup nodejs, juggernaut
-* bundle install
-* rake db:migrate
-* bundle exec foreman start -p 3000
+Install ruby & bundler 
+
+## Nodejs & juggernaut
+
+    cd /tmp
+    wget http://nodejs.org/dist/v0.8.8/node-v0.8.8.tar.gz
+    tar -xf node-v0.8.8.tar.gz
+    cd node-v0.8.8/
+    ./configure
+    make
+    sudo make install
+
+    npm install -g juggernaut
+
+
+## Setup project
+    bundle install
+    rake db:seetup
+    bundle exec foreman start -p 3000
 
 Now go to [http://localhost:3000](http://localhost:3000)
